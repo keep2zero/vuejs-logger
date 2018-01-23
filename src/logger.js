@@ -7,6 +7,7 @@ export default (function () {
         showLogLevel: false,
         showMethodName: false,
         showConsoleColors: false,
+        showDev: true
     }
 
     const logLevels = ['debug', 'info', 'warn', 'error', 'fatal']
@@ -16,6 +17,9 @@ export default (function () {
         logLevels.forEach(logLevel => {
               if (logLevels.indexOf(logLevel) >= logLevels.indexOf(options.logLevel)) {
                   logger[logLevel] = (...args) => {
+                       //hide logger if showDev false;
+                       if(!options.showDev) return;
+
                       let methodName = getMethodName()
                       const methodNamePrefix = options.showMethodName ? methodName + ` ${options.separator} ` : ''
                       const logLevelPrefix = options.showLogLevel ? logLevel + ` ${options.separator} ` : ''
@@ -51,6 +55,9 @@ export default (function () {
             return false
         }
         if (options.showConsoleColors && typeof options.showConsoleColors !== 'boolean') {
+            return false
+        }
+        if(options.showDev && typeof options.showDev !== 'boolean') {
             return false
         }
         if (options.separator && (typeof options.separator !== 'string' || (typeof options.separator === 'string' && options.separator.length > 3))) {
