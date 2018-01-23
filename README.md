@@ -22,7 +22,7 @@
 
 @ [https://codepen.io/justinkames/pen/BwGOVQ](https://codepen.io/justinkames/pen/BwGOVQ)
 
-## Introduction 
+## Introduction
 
 vuejs-logger is a logging library that enables logging for Vue applications. It restricts log messages that are higher than the specified log level. Features include :
 
@@ -53,7 +53,7 @@ import VueLogger from 'vuejs-logger'
 
 const options = {
     // required ['debug', 'info', 'warn', 'error', 'fatal']
-    logLevel : 'debug', 
+    logLevel : 'debug',
     // optional : defaults to false if not specified
     stringifyArguments : false,
     // optional : defaults to false if not specified
@@ -63,7 +63,9 @@ const options = {
     // optional : defaults to '|' if not specified
     separator: '|',
     // optional : defaults to false if not specified
-    showConsoleColors: false
+    showConsoleColors: false,
+    // optional : defaults to true if not specified
+    showDev: true
 }
 
 Vue.use(VueLogger, options)
@@ -89,7 +91,7 @@ new Vue({
 
 function externalFunction() {
    // log from external function
-   Vue.$log.debug('log from function outside component.') 
+   Vue.$log.debug('log from function outside component.')
 }
 ```
 

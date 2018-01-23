@@ -1,6 +1,6 @@
 {
-  "name": "vuejs-logger",
-  "author": "Justin Kames",
+  "name": "vuejs-logger-zero",
+  "author": "Justin Kames, keep2zero",
   "version": "1.3.3",
   "description": "Vuejs-logger, provides customizable logging functionality for Vue.js.",
   "main": "dist/index.js",
@@ -31,5 +31,6 @@
     "mocha": "3.4.2",
     "uglify": "0.1.5",
     "vue": "2.4.1"
-  }
+  },
+  "dependencies": {}
 }
